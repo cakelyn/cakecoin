@@ -4,6 +4,10 @@ const { validationResult } = require('express-validator/check');
 class Cakecoin {
   constructor() {
     this.blockchain = new Blockchain();
+
+    this.getChain = this.getChain.bind(this);
+    this.newTransaction = this.newTransaction.bind(this);
+    this.mine = this.mine.bind(this);
   }
 
   getChain (req, res, next) {
